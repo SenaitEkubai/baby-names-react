@@ -3,6 +3,8 @@ import BabyNamesData from "./BabyNamesData";
 import BabyName from "./BabyName";
 
 const BabyNameLists = () => {
+  console.log(BabyNamesData);
+
   return (
     <div>
       {BabyNamesData.sort((a, b) => {
@@ -11,7 +13,7 @@ const BabyNameLists = () => {
         }
         return 1;
       }).map((el) => (
-        <BabyName name={el.name} />
+        <BabyName sex={el.sex === "f" ? "male" : "female"} name={el.name} />
       ))}
     </div>
   );

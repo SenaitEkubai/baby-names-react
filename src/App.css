@@ -39,8 +39,14 @@
 .list-container {
   display: inline-block;
 }
-.list {
+.list-container div ul li {
   list-style: none;
   height: 50px;
   width: 60px;
+}
+.male {
+  background-color: orange;
+}
+.female {
+  background-color: rgb(123, 170, 14);
 }

@@ -5,9 +5,7 @@ const BabyName = (props) => {
     <div className="list-container">
       <div>
         <ul>
-          <li className="list" style={{ color: "green" }}>
-            {props.name}
-          </li>
+          <li className={props.sex}>{props.name}</li>
         </ul>
       </div>
     </div>
