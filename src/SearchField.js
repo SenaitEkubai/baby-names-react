@@ -1,11 +1,8 @@
 import React from "react";
+/* import BabyNamesData from "./BabyNamesData";
+import BabyNameLists from "./BabyNameLists"; */
 
 const SearchField = (props) => {
-  return (
-    <div>
-      <h3 className="mb-3 mt-5">BabyNames</h3>
-      <input placeholder="Search for a baby name"></input>
-    </div>
-  );
+  return <div></div>;
 };
 export default SearchField;

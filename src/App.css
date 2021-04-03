@@ -1,3 +1,5 @@
+body {
+}
 .App {
   text-align: center;
 }
@@ -39,14 +41,29 @@
 .list-container {
   display: inline-block;
 }
-.list-container div ul li {
-  list-style: none;
+.list-container button {
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: 5px;
   height: 50px;
-  width: 60px;
+  width: 90px;
+}
+.favorite {
+  color: grey;
+  text-align: left;
+}
+hr {
+  color: grey;
+  border-top: 1px solid rgb(187, 184, 184);
+  width: 90%;
+}
+.list-container :first-child {
+  text-decoration: none;
+  color: black;
 }
 .male {
-  background-color: orange;
+  background-color: rgb(8, 238, 130);
 }
 .female {
-  background-color: rgb(123, 170, 14);
+  background-color: #dfe085;
 }

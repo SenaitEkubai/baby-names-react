@@ -4,9 +4,9 @@ const BabyName = (props) => {
   return (
     <div className="list-container">
       <div>
-        <ul>
-          <li className={props.sex}>{props.name}</li>
-        </ul>
+        <button onClick={props.handler} className={props.sex}>
+          <p>{props.name}</p>
+        </button>
       </div>
     </div>
   );
