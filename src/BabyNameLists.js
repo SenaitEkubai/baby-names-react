@@ -6,8 +6,9 @@ import Favorites from "./Favorites";
 
 const BabyNameLists = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
-  let [fav, setFav] = useState([]);
-  let [list, setList] = useState([]);
+  const [fav, setFav] = useState([]);
+  const [isBoyClicked, setIsBoyClicked] = useState(false);
+  const [isGirlClicked, setIsGirlClicked] = useState(false);
 
   // favorite  adding function
 
@@ -24,32 +25,68 @@ const BabyNameLists = (props) => {
           onChange={(event) => setSearchTerm(event.target.value)}
         ></input>
         <GenderNameButtons
-          boySorterFunction={(event) => console.log(event.target)}
+          boyFunction={() => {
+            setIsBoyClicked(true);
+          }}
+          girlFunction={() => {
+            setIsGirlClicked(true);
+          }}
+          allGenderHandler={() => {
+            setIsGirlClicked(false);
+            setIsBoyClicked(false);
+          }}
         />
       </div>
       <Favorites fav={fav} data={BabyNamesData} />
       <hr></hr>
-      {BabyNamesData.filter((el) => {
-        if (searchTerm === "") {
-          return el;
-        } else {
-          return el.name.toLowerCase().includes(searchTerm.toLowerCase());
-        }
-      })
-        .sort((a, b) => {
-          if (a.name < b.name) {
-            return -1;
-          }
-          return 1;
-        })
-        .map((el, index) => (
-          <BabyName
-            handler={() => addFavorite(el.id)}
-            key={index}
-            sex={el.sex === "f" ? "female" : "male"}
-            name={el.name}
-          />
-        ))}
+
+      {isGirlClicked
+        ? BabyNamesData.filter((el) => {
+            if (el.sex === "f") {
+              return el;
+            }
+          }).map((el, index) => (
+            <BabyName
+              handler={() => addFavorite(el.id)}
+              key={index}
+              sex={el.sex === "f" ? "female" : "male"}
+              name={el.name}
+            />
+          ))
+        : isBoyClicked
+        ? BabyNamesData.filter((el) => {
+            if (el.sex === "m") {
+              return el;
+            }
+          }).map((el, index) => (
+            <BabyName
+              handler={() => addFavorite(el.id)}
+              key={index}
+              sex={el.sex === "f" ? "female" : "male"}
+              name={el.name}
+            />
+          ))
+        : BabyNamesData.filter((el) => {
+            if (searchTerm === "") {
+              return el;
+            } else {
+              return el.name.toLowerCase().includes(searchTerm.toLowerCase());
+            }
+          })
+            .sort((a, b) => {
+              if (a.name < b.name) {
+                return -1;
+              }
+              return 1;
+            })
+            .map((el, index) => (
+              <BabyName
+                handler={() => addFavorite(el.id)}
+                key={index}
+                sex={el.sex === "f" ? "female" : "male"}
+                name={el.name}
+              />
+            ))}
     </div>
   );
 };

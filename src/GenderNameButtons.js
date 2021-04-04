@@ -3,8 +3,8 @@ const GenderNameButtons = (props) => {
   return (
     <div>
       <button onClick={props.allGenderHandler}>All</button>
-      <button onClick={props.boySorterFunction}>Boy</button>
-      <button onClick={props.girlsorterFunction}>Girl</button>
+      <button onClick={props.boyFunction}>Boy</button>
+      <button onClick={props.girlFunction}>Girl</button>
     </div>
   );
 };

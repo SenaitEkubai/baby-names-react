@@ -51,6 +51,7 @@ body {
 .favorite {
   color: grey;
   text-align: left;
+  margin-top: 5%;
 }
 hr {
   color: grey;
@@ -62,8 +63,8 @@ hr {
   color: black;
 }
 .male {
-  background-color: rgb(8, 238, 130);
+  background-color: rgb(8, 115, 238);
 }
 .female {
-  background-color: #dfe085;
+  background-color: #f80be4;
 }

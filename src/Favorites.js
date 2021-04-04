@@ -12,10 +12,10 @@ const Favorites = ({ data, fav, key }) => {
 
   return (
     <div className="favorite">
-      <h2>
-        My Favorites...
+      <h3>
+        Click on a name to add Favorites ...
         <ul className="list-container">{namesList}</ul>
-      </h2>
+      </h3>
     </div>
   );
 };
