@@ -1,15 +1,11 @@
 import React from "react";
-const Favorites = ({ data, fav }) => {
-  console.log(fav);
-  console.log(data);
-
+const Favorites = ({ data, fav, key }) => {
   const namesList = fav.map((id) => {
-    console.log(id);
-    const { name, sex } = data[id];
-    console.log(name);
+    let x = data.filter((el) => el.id === id);
+
     return (
-      <button key={id} className={sex === "f" ? "female" : "male"}>
-        {name}
+      <button key={id} className={x[0].sex === "f" ? "female" : "male"}>
+        {x[0].name}
       </button>
     );
   });

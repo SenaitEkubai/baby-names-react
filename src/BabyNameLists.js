@@ -12,10 +12,7 @@ const BabyNameLists = (props) => {
   // favorite  adding function
 
   function addFavorite(id) {
-    list = fav.concat([id]);
-    console.log(list + "to add to favlist hhhhhhhhhhhhhhh");
-
-    setFav(list);
+    setFav([...fav, id]);
   }
 
   return (
@@ -49,7 +46,7 @@ const BabyNameLists = (props) => {
           <BabyName
             handler={() => addFavorite(el.id)}
             key={index}
-            sex={el.sex === "f" ? "male" : "female"}
+            sex={el.sex === "f" ? "female" : "male"}
             name={el.name}
           />
         ))}
