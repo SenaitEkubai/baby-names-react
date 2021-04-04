@@ -45,6 +45,8 @@ body {
     transform: rotate(360deg);
   }
 }
+.title{
+  background-color:grey;
 .list-container {
   display: inline-block;
 }
