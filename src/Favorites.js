@@ -1,15 +1,17 @@
 import React from "react";
-const Favorites = ({ data, fav }) => {
+const Favorites = ({ data, fav, removeFavHandler }) => {
   const namesList = fav.map((id) => {
     const name = data.filter((el) => el.id === id);
-
     return (
-      <button key={id} className={name[0].sex === "f" ? "female" : "male"}>
+      <button
+        key={id}
+        className={name[0].sex === "f" ? "female" : "male"}
+        onClick={() => removeFavHandler(id)}
+      >
         {name[0].name}
       </button>
     );
   });
-  for (var i = 0; i < namesList.length; i++) {}
 
   return (
     <div className="favorite">

@@ -15,7 +15,9 @@ const BabyNameLists = (props) => {
   function addFavorite(id) {
     setFav([...fav, id]);
   }
-
+  function removeFav(id) {
+    setFav(fav.filter((item) => item !== id));
+  }
   return (
     <div className={props.class}>
       <div>
@@ -37,7 +39,7 @@ const BabyNameLists = (props) => {
           }}
         />
       </div>
-      <Favorites fav={fav} data={BabyNamesData} />
+      <Favorites fav={fav} data={BabyNamesData} removeFavHandler={removeFav} />
       <hr></hr>
 
       {isGirlClicked
@@ -53,6 +55,8 @@ const BabyNameLists = (props) => {
                 return el;
               }
             })
+            .filter((item) => !fav.includes(item.id))
+
             .sort((a, b) => {
               if (a.name < b.name) {
                 return -1;
@@ -80,6 +84,8 @@ const BabyNameLists = (props) => {
                 return el;
               }
             })
+            .filter((item) => !fav.includes(item.id))
+
             .sort((a, b) => {
               if (a.name < b.name) {
                 return -1;
@@ -101,6 +107,7 @@ const BabyNameLists = (props) => {
               return el.name.toLowerCase().includes(searchTerm.toLowerCase());
             }
           })
+            .filter((item) => !fav.includes(item.id))
             .sort((a, b) => {
               if (a.name < b.name) {
                 return -1;

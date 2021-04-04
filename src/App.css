@@ -78,13 +78,17 @@ hr {
 .girl {
   background-color: #f80be4;
   width: 60px;
+  border-radius: 5px;
 }
 .boy {
   width: 60px;
+  border-radius: 5px;
 }
 .all {
   width: 60px;
-  background-color: sienna;
+  background-color: rgb(46, 37, 33);
+  border-radius: 5px;
+  color: white;
 }
 input {
   margin-top: 2%;
