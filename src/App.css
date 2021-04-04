@@ -45,6 +45,9 @@ body {
     transform: rotate(360deg);
   }
 }
+.title {
+  color: grey;
+}
 .list-container {
   display: inline-block;
 }
@@ -52,8 +55,6 @@ body {
   border-radius: 5px;
   display: inline-block;
   margin-left: 5px;
-  /* height: 50px;
-  width: 90px; */
 }
 .favorite {
   color: grey;

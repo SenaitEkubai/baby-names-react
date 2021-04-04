@@ -21,7 +21,7 @@ const BabyNameLists = (props) => {
   return (
     <div className={props.class}>
       <div>
-        <h3 className="mb-3 mt-5">BabyNames</h3>
+        <h3 className=" title mb-3 mt-5">BabyNames</h3>
         <input
           placeholder="Search..."
           onChange={(event) => setSearchTerm(event.target.value)}
